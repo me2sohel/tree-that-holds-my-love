@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#241a25">
+  <meta name="description" content="A quiet little world beneath a tree that holds a thousand feelings.">
+  <title>The Tree That Holds My Love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main id="app">
+    <canvas id="world" aria-label="Interactive 3D blossom garden"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">✿</span>
+        <span>THE TREE THAT HOLDS MY LOVE</span>
+      </div>
+      <div class="top-actions">
+        <button id="sound-toggle" class="icon-button" aria-label="Toggle ambient sound" title="Sound is not enabled in this prototype">♫</button>
+        <button id="guide-toggle" class="icon-button" aria-label="Show controls" title="Controls">?</button>
+      </div>
+    </header>
+
+    <section id="intro" class="intro panel">
+      <p class="eyebrow">SOMEWHERE, BENEATH ALL THIS LOVE</p>
+      <h1>A world I made<br><em>for you.</em></h1>
+      <p class="intro-copy">Take your time. There is no rush here.</p>
+      <button id="enter-button" class="primary-button">Enter the garden <span>↗</span></button>
+    </section>
+
+    <aside id="hint" class="hint" hidden>Drag to look around · Tap a glowing blossom</aside>
+
+    <section id="message-panel" class="message-panel" aria-live="polite" hidden>
+      <div class="message-topline"><span id="message-category">A BLOSSOM YOU FOUND</span><button id="close-message" class="close-button" aria-label="Close message">×</button></div>
+      <h2 id="message-title">Some things are beautiful without trying.</h2>
+      <p id="message-body">This is a placeholder message. Your own words will make this world yours.</p>
+      <div class="message-bottom"><span id="message-status">Discovery saved</span><button id="return-button" class="text-button">Return to garden ↗</button></div>
+    </section>
+
+    <section id="guide" class="guide panel" hidden>
+      <button id="close-guide" class="close-button guide-close" aria-label="Close controls">×</button>
+      <p class="eyebrow">A LITTLE GUIDE</p>
+      <h2>Explore at your own pace.</h2>
+      <p><strong>Look around:</strong> drag anywhere on the garden.</p>
+      <p><strong>Discover:</strong> tap a glowing blossom or the drifting petal.</p>
+      <p><strong>Return:</strong> close a message to continue exploring.</p>
+      <p class="small-note">This is an early prototype. More of the garden will open as we build it.</p>
+    </section>
+
+    <footer class="bottom-bar">
+      <span id="progress-label">THE GARDEN IS WAITING</span>
+      <button id="reset-button" class="quiet-button">Begin again</button>
+    </footer>
+
+    <div id="loading" class="loading">
+      <div class="loading-flower">✿</div>
+      <p>Growing your little world…</p>
+    </div>
+    <noscript>This experience needs JavaScript enabled to show the interactive garden.</noscript>
+  </main>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
